@@ -1,0 +1,1374 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/13/2024 3:17:42 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-99RAB9M"
+  DTS:CreatorName="DESKTOP-99RAB9M\Leo"
+  DTS:DTSID="{FADDAF5D-EF37-419F-AD79-32DD8D9CEE62}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="11274"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{63F30806-A447-4510-ACDC-B16CE5F13FFB}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[45.188.139.63.TDChistorySales.TUIA_ALUMNOS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B2582EFE-FEC0-4106-B6BF-5ACAA616B5A0}"
+      DTS:ObjectName="45.188.139.63.TDChistorySales.TUIA_ALUMNOS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=45.188.139.63;User ID=TUIA_ALUMNOS;Initial Catalog=TDChistorySales;Provider=MSOLEDBSQL.1;Persist Security Info=False;Initial File Name=;Server SPN=;Authentication=;Access Token=;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2kDYHmq3mEubMdu06um2JgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA4ptK+JyGbFJEyCw4hi4CfgjWmynSWaNKenXizdxqQ+QAAAAAOgAAAAAIAACAAAAA48p0HTu/+A/D2KBK9y4zLuHXsrviRjUvM7PUpE5Km4CAAAACynfqoJjELYtj0taZgOVLL439Aweybe1w9JC49qLYDBkAAAAAgETkK5ATuTqul1bMDtYpTot7Pi0NaCvp4hy/P5MLdwfcPt0x3HDLEfW1HFo4jKDjDXnIWn0j/25Y59NyOtHWs</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.bd_staging_2024_G18]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C8F55D11-C88F-4B06-BF29-5888DFDF5C71}"
+      DTS:ObjectName="localhost.bd_staging_2024_G18">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=bd_staging_2024_G18;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TP_BDD2 1]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{C3859DF6-BD1F-45F8-B466-7248E33197E3}"
+      DTS:ObjectName="TP_BDD2 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Dsn=TP_BDD2;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TP_BDD2 2]"
+      DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{AA51441B-8770-4693-9FD9-29016A3BC96A}"
+      DTS:ObjectName="TP_BDD2 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Dsn=TP_BDD2;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga SQL Server"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Carga SQL Server"
+      DTS:DTSID="{CFB05F97-B93D-4C86-8472-DD25F7B9B5AA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga SQL Server"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga SQL Server\SQL Server Origen"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SQL Server Origen"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from billing</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga SQL Server\SQL Server Origen.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[45.188.139.63.TDChistorySales.TUIA_ALUMNOS]"
+                  connectionManagerRefId="Package.ConnectionManagers[45.188.139.63.TDChistorySales.TUIA_ALUMNOS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[billing_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].ExternalColumns[billing_id]"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[billing_id]"
+                      name="billing_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[date]"
+                      name="date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      name="customer_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[employee_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].ExternalColumns[employee_id]"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[employee_id]"
+                      name="employee_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[product_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[quantity]"
+                      name="quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].ExternalColumns[region]"
+                      length="45"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[region]"
+                      name="region"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].ExternalColumns[billing_id]"
+                      dataType="i4"
+                      name="billing_id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      dataType="dbTimeStamp"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      dataType="i4"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].ExternalColumns[employee_id]"
+                      dataType="i4"
+                      name="employee_id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                      dataType="i4"
+                      name="quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].ExternalColumns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="region" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[billing_id]"
+                      dataType="i4"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[billing_id]"
+                      name="billing_id" />
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[date]"
+                      name="date" />
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      dataType="i4"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      name="customer_id" />
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[employee_id]"
+                      dataType="i4"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[employee_id]"
+                      name="employee_id" />
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      dataType="i4"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      name="product_id" />
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                      dataType="i4"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                      name="quantity" />
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[region]"
+                      name="region" />
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga SQL Server\SQL Server SG"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="SQL Server SG"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stg_billing_G18]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga SQL Server\SQL Server SG.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.bd_staging_2024_G18]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.bd_staging_2024_G18]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].Columns[billing_id]"
+                      cachedDataType="i4"
+                      cachedName="billing_id"
+                      externalMetadataColumnId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].ExternalColumns[billing_id]"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[billing_id]" />
+                    <inputColumn
+                      refId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].Columns[date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date"
+                      externalMetadataColumnId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[date]" />
+                    <inputColumn
+                      refId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].Columns[customer_id]"
+                      cachedDataType="i4"
+                      cachedName="customer_id"
+                      externalMetadataColumnId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[customer_id]" />
+                    <inputColumn
+                      refId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].Columns[employee_id]"
+                      cachedDataType="i4"
+                      cachedName="employee_id"
+                      externalMetadataColumnId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].ExternalColumns[employee_id]"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[employee_id]" />
+                    <inputColumn
+                      refId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].Columns[product_id]"
+                      cachedDataType="i4"
+                      cachedName="product_id"
+                      externalMetadataColumnId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].Columns[quantity]"
+                      cachedDataType="i4"
+                      cachedName="quantity"
+                      externalMetadataColumnId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[quantity]" />
+                    <inputColumn
+                      refId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].Columns[region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="region"
+                      externalMetadataColumnId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].ExternalColumns[region]"
+                      lineageId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output].Columns[region]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].ExternalColumns[billing_id]"
+                      dataType="i4"
+                      name="billing_id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      dataType="dbTimeStamp"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      dataType="i4"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].ExternalColumns[employee_id]"
+                      dataType="i4"
+                      name="employee_id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                      dataType="i4"
+                      name="quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input].ExternalColumns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="region" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga SQL Server\SQL Server SG.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server SG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga SQL Server\SQL Server SG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga SQL Server\SQL Server SG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga SQL Server\SQL Server SG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga SQL Server.Paths[OLE DB Source Output]"
+              endId="Package\Carga SQL Server\SQL Server SG.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Carga SQL Server\SQL Server Origen.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Cargar tablas Mysql"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Cargar tablas Mysql"
+      DTS:DTSID="{BC286DF5-ECC6-41C5-8DC3-FB0A8E6D1A80}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cargar tablas Mysql"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Cargar tablas Mysql\MySQL Billing"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="MySQL Billing"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from billing</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar tablas Mysql\MySQL Billing.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TP_BDD2 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[TP_BDD2 2]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].Columns[BILLING_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].ExternalColumns[BILLING_ID]"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].Columns[BILLING_ID]"
+                      name="BILLING_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].Columns[REGION]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].ExternalColumns[REGION]"
+                      length="45"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].Columns[REGION]"
+                      name="REGION"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].Columns[BRANCH_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].ExternalColumns[BRANCH_ID]"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].Columns[BRANCH_ID]"
+                      name="BRANCH_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].Columns[DATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].ExternalColumns[DATE]"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].Columns[DATE]"
+                      name="DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].Columns[CUSTOMER_ID]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].ExternalColumns[CUSTOMER_ID]"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].Columns[EMPLOYEE_ID]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].ExternalColumns[EMPLOYEE_ID]"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].Columns[EMPLOYEE_ID]"
+                      name="EMPLOYEE_ID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].ExternalColumns[BILLING_ID]"
+                      dataType="i4"
+                      name="BILLING_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].ExternalColumns[REGION]"
+                      dataType="wstr"
+                      length="45"
+                      name="REGION" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].ExternalColumns[BRANCH_ID]"
+                      dataType="i4"
+                      name="BRANCH_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].ExternalColumns[DATE]"
+                      dataType="dbTimeStamp"
+                      name="DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].ExternalColumns[CUSTOMER_ID]"
+                      dataType="i2"
+                      name="CUSTOMER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET].ExternalColumns[EMPLOYEE_ID]"
+                      dataType="i2"
+                      name="EMPLOYEE_ID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de error de origen de ADO NET].Columns[BILLING_ID]"
+                      dataType="i4"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de error de origen de ADO NET].Columns[BILLING_ID]"
+                      name="BILLING_ID" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de error de origen de ADO NET].Columns[REGION]"
+                      dataType="wstr"
+                      length="45"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de error de origen de ADO NET].Columns[REGION]"
+                      name="REGION" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de error de origen de ADO NET].Columns[BRANCH_ID]"
+                      dataType="i4"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de error de origen de ADO NET].Columns[BRANCH_ID]"
+                      name="BRANCH_ID" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de error de origen de ADO NET].Columns[DATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de error de origen de ADO NET].Columns[DATE]"
+                      name="DATE" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de error de origen de ADO NET].Columns[CUSTOMER_ID]"
+                      dataType="i2"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de error de origen de ADO NET].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de error de origen de ADO NET].Columns[EMPLOYEE_ID]"
+                      dataType="i2"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de error de origen de ADO NET].Columns[EMPLOYEE_ID]"
+                      name="EMPLOYEE_ID" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar tablas Mysql\MySQL Billing_detail"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="MySQL Billing_detail"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from billing_detail</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">billing_detail</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar tablas Mysql\MySQL Billing_detail.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TP_BDD2 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[TP_BDD2 2]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de origen de ADO NET].Columns[BILLING_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de origen de ADO NET].ExternalColumns[BILLING_ID]"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de origen de ADO NET].Columns[BILLING_ID]"
+                      name="BILLING_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de origen de ADO NET].Columns[PRODUCT_ID]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de origen de ADO NET].ExternalColumns[PRODUCT_ID]"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de origen de ADO NET].Columns[PRODUCT_ID]"
+                      name="PRODUCT_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de origen de ADO NET].Columns[QUANTITY]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de origen de ADO NET].ExternalColumns[QUANTITY]"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de origen de ADO NET].Columns[QUANTITY]"
+                      name="QUANTITY"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de origen de ADO NET].ExternalColumns[BILLING_ID]"
+                      dataType="i4"
+                      name="BILLING_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de origen de ADO NET].ExternalColumns[PRODUCT_ID]"
+                      dataType="i2"
+                      name="PRODUCT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de origen de ADO NET].ExternalColumns[QUANTITY]"
+                      dataType="i2"
+                      name="QUANTITY" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[BILLING_ID]"
+                      dataType="i4"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[BILLING_ID]"
+                      name="BILLING_ID" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[PRODUCT_ID]"
+                      dataType="i2"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[PRODUCT_ID]"
+                      name="PRODUCT_ID" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[QUANTITY]"
+                      dataType="i2"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[QUANTITY]"
+                      name="QUANTITY" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar tablas Mysql\staging_SQL Billing"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="staging_SQL Billing"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stg_billingMySQL_2024_G18]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT billing.*, billing_detail.*
+FROM sales.billing billing, sales.billing_detail billing_detail
+WHERE 
+	billing.BILLING_ID = billing_detail.BILLING_ID</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar tablas Mysql\staging_SQL Billing.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.bd_staging_2024_G18]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.bd_staging_2024_G18]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Cargar tablas Mysql\staging_SQL Billing.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar tablas Mysql\staging_SQL Billing.Inputs[OLE DB Destination Input].ExternalColumns[BILLING_ID]"
+                      dataType="i4"
+                      name="BILLING_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tablas Mysql\staging_SQL Billing.Inputs[OLE DB Destination Input].ExternalColumns[REGION]"
+                      dataType="wstr"
+                      length="45"
+                      name="REGION" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tablas Mysql\staging_SQL Billing.Inputs[OLE DB Destination Input].ExternalColumns[BRANCH_ID]"
+                      dataType="i4"
+                      name="BRANCH_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tablas Mysql\staging_SQL Billing.Inputs[OLE DB Destination Input].ExternalColumns[DATE]"
+                      dataType="dbTimeStamp"
+                      name="DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tablas Mysql\staging_SQL Billing.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_ID]"
+                      dataType="i2"
+                      name="CUSTOMER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tablas Mysql\staging_SQL Billing.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYEE_ID]"
+                      dataType="i2"
+                      name="EMPLOYEE_ID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar tablas Mysql\staging_SQL Billing.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Cargar tablas Mysql\staging_SQL Billing.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\staging_SQL Billing.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar tablas Mysql\staging_SQL Billing.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\staging_SQL Billing.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar tablas Mysql\staging_SQL Billing.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar tablas Mysql\staging_SQL Billing Detail"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="staging_SQL Billing Detail"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stg_billindetailMySQL_2024_G18]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT billing.*, billing_detail.*
+FROM sales.billing billing, sales.billing_detail billing_detail
+WHERE 
+	billing.BILLING_ID = billing_detail.BILLING_ID</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar tablas Mysql\staging_SQL Billing Detail.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.bd_staging_2024_G18]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.bd_staging_2024_G18]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Cargar tablas Mysql\staging_SQL Billing Detail.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar tablas Mysql\staging_SQL Billing Detail.Inputs[OLE DB Destination Input].Columns[BILLING_ID]"
+                      cachedDataType="i4"
+                      cachedName="BILLING_ID"
+                      externalMetadataColumnId="Package\Cargar tablas Mysql\staging_SQL Billing Detail.Inputs[OLE DB Destination Input].ExternalColumns[BILLING_ID]"
+                      lineageId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de origen de ADO NET].Columns[BILLING_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar tablas Mysql\staging_SQL Billing Detail.Inputs[OLE DB Destination Input].ExternalColumns[BILLING_ID]"
+                      dataType="i4"
+                      name="BILLING_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tablas Mysql\staging_SQL Billing Detail.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_ID]"
+                      dataType="i2"
+                      name="PRODUCT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tablas Mysql\staging_SQL Billing Detail.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITY]"
+                      dataType="i2"
+                      name="QUANTITY" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar tablas Mysql\staging_SQL Billing Detail.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Cargar tablas Mysql\staging_SQL Billing Detail.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\staging_SQL Billing Detail.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar tablas Mysql\staging_SQL Billing Detail.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar tablas Mysql\staging_SQL Billing Detail.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar tablas Mysql\staging_SQL Billing Detail.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Cargar tablas Mysql.Paths[Salida de origen de ADO NET]"
+              endId="Package\Cargar tablas Mysql\staging_SQL Billing.Inputs[OLE DB Destination Input]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Cargar tablas Mysql\MySQL Billing.Outputs[Salida de origen de ADO NET]" />
+            <path
+              refId="Package\Cargar tablas Mysql.Paths[Salida de origen de ADO NET1]"
+              endId="Package\Cargar tablas Mysql\staging_SQL Billing Detail.Inputs[OLE DB Destination Input]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Cargar tablas Mysql\MySQL Billing_detail.Outputs[Salida de origen de ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{EFD849EB-5694-4E7D-A904-A351DF61D089}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Cargar tablas Mysql"
+          TopLeft="223.071428571429,113.071428571429" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Carga SQL Server"
+          TopLeft="535.714285714286,69.2857142857143" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Task"
+          TopLeft="305.5,14.0714285714286" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Cargar tablas Mysql">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Cargar tablas Mysql\staging_SQL Billing"
+          TopLeft="259.5,157.5" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Cargar tablas Mysql\MySQL Billing"
+          TopLeft="257.5,28.5" />
+        <EdgeLayout
+          Id="Package\Cargar tablas Mysql.Paths[Salida de origen de ADO NET]"
+          TopLeft="331.5,70.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.5,87"
+              Start="0,0"
+              End="15.5,79.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.5"
+                    Point2="0,43.5"
+                    Point3="4,43.5" />
+                  <mssgle:LineSegment
+                    End="11.5,43.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.5,43.5"
+                    Point2="15.5,43.5"
+                    Point3="15.5,47.5" />
+                  <mssgle:LineSegment
+                    End="15.5,79.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="219,42"
+          Id="Package\Cargar tablas Mysql\MySQL Billing_detail"
+          TopLeft="549.785714285714,34.0714285714286" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Cargar tablas Mysql\staging_SQL Billing Detail"
+          TopLeft="380,188.571428571429" />
+        <EdgeLayout
+          Id="Package\Cargar tablas Mysql.Paths[Salida de origen de ADO NET1]"
+          TopLeft="659.285714285714,76.0714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-176.285714285714,112.5"
+              Start="0,0"
+              End="-176.285714285714,105">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.25"
+                    Point2="0,56.25"
+                    Point3="-4,56.25" />
+                  <mssgle:LineSegment
+                    End="-172.285714285714,56.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-172.285714285714,56.25"
+                    Point2="-176.285714285714,56.25"
+                    Point3="-176.285714285714,60.25" />
+                  <mssgle:LineSegment
+                    End="-176.285714285714,105" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar tablas Mysql\staging_SQL Billing">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Carga SQL Server">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Carga SQL Server\SQL Server Origen"
+          TopLeft="538.5,95.5" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Carga SQL Server\SQL Server SG"
+          TopLeft="508.5,250.5" />
+        <EdgeLayout
+          Id="Package\Carga SQL Server.Paths[OLE DB Source Output]"
+          TopLeft="617,137.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20,113"
+              Start="0,0"
+              End="-20,105.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.5"
+                    Point2="0,56.5"
+                    Point3="-4,56.5" />
+                  <mssgle:LineSegment
+                    End="-16,56.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16,56.5"
+                    Point2="-20,56.5"
+                    Point3="-20,60.5" />
+                  <mssgle:LineSegment
+                    End="-20,105.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga SQL Server\SQL Server Origen">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga SQL Server\SQL Server SG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar tablas Mysql\MySQL Billing">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar tablas Mysql\MySQL Billing_detail">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar tablas Mysql\staging_SQL Billing Detail">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
