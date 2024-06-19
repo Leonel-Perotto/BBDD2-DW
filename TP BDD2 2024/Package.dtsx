@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="187"
-  DTS:VersionGUID="{85EA6110-6562-4BCC-914C-403B82E47337}">
+  DTS:VersionBuild="207"
+  DTS:VersionGUID="{AAB24A7F-24D1-4ACD-A52A-617F3146BCA1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJoWPOEa1gkWi7l6o+ND6DAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADRzbP2bSdxpOeyr4JAC6xA2d7Z2vmhzYe6ddp0o7ww1gAAAAAOgAAAAAIAACAAAADygHsqr9TEVS6K4oJkozjmSjpMC84oT57gIhufQ8wA/SAAAAAWR8RkegyxUpwoiHbyRgzbBU0GTnYm5Q91o1yHwB5JTkAAAAAHJGFefgb/Sa2Jr7NigEv4rTdk6rtA0VNkjREKBoY3U9p5khow553eckJriixWfQ2OFcueT1iVqN1b63O+Os2j</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJoWPOEa1gkWi7l6o+ND6DAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADS3uWvJhu2RaFRs2626Ny13wdCQK0bTx7OcrP/weGviwAAAAAOgAAAAAIAACAAAACLokZRpU0TvcN0l0NFtmh67O2UHX5ql4kGAXcDWsC7kyAAAAC5GN8tE6oczQvY1YUGB/SbY1LfQCxRqYh7Pb70XPMUdUAAAAD4AIaHmnrSye8U/NgMNcdqNyc4kZssFZ5CL8m918f03CPMyq3LhptXpPoX6pkI4o5qN5tEDSvlNgC9b5WyhGGJ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1791,7 +1791,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[int_products_2024_G18]</property>
+                      name="OpenRowset">[dbo].[int_products_2024_G18]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1863,11 +1863,18 @@
                           externalMetadataColumnId="Package\Intermedia\Limpieza y carga de int_Products\int_products.Inputs[OLE DB Destination Input].ExternalColumns[measurement]"
                           lineageId="Package\Intermedia\Limpieza y carga de int_Products\creamos measurement.Outputs[Derived Column Output].Columns[measurement]" />
                         <inputColumn
-                          refId="Package\Intermedia\Limpieza y carga de int_Products\int_products.Inputs[OLE DB Destination Input].Columns[capacity_int]"
-                          cachedDataType="i4"
-                          cachedName="capacity_int"
+                          refId="Package\Intermedia\Limpieza y carga de int_Products\int_products.Inputs[OLE DB Destination Input].Columns[capacity_decimal]"
+                          cachedDataType="decimal"
+                          cachedName="capacity_decimal"
+                          cachedScale="2"
                           externalMetadataColumnId="Package\Intermedia\Limpieza y carga de int_Products\int_products.Inputs[OLE DB Destination Input].ExternalColumns[capacity]"
-                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int.Outputs[Derived Column Output].Columns[capacity_int]" />
+                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal.Outputs[Derived Column Output].Columns[capacity_decimal]" />
+                        <inputColumn
+                          refId="Package\Intermedia\Limpieza y carga de int_Products\int_products.Inputs[OLE DB Destination Input].Columns[is_can]"
+                          cachedDataType="i4"
+                          cachedName="is_can"
+                          externalMetadataColumnId="Package\Intermedia\Limpieza y carga de int_Products\int_products.Inputs[OLE DB Destination Input].ExternalColumns[is_can]"
+                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\Limpieza capacity.Outputs[Derived Column Output].Columns[is_can]" />
                         <inputColumn
                           refId="Package\Intermedia\Limpieza y carga de int_Products\int_products.Inputs[OLE DB Destination Input].Columns[id_product]"
                           cachedCodepage="1252"
@@ -1876,12 +1883,6 @@
                           cachedName="id_product"
                           externalMetadataColumnId="Package\Intermedia\Limpieza y carga de int_Products\int_products.Inputs[OLE DB Destination Input].ExternalColumns[id_product]"
                           lineageId="Package\Intermedia\Limpieza y carga de int_Products\stg_products.Outputs[OLE DB Source Output].Columns[id_product]" />
-                        <inputColumn
-                          refId="Package\Intermedia\Limpieza y carga de int_Products\int_products.Inputs[OLE DB Destination Input].Columns[is_can]"
-                          cachedDataType="i4"
-                          cachedName="is_can"
-                          externalMetadataColumnId="Package\Intermedia\Limpieza y carga de int_Products\int_products.Inputs[OLE DB Destination Input].ExternalColumns[is_can]"
-                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\Limpieza capacity.Outputs[Derived Column Output].Columns[is_can]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1898,20 +1899,18 @@
                           name="measurement" />
                         <externalMetadataColumn
                           refId="Package\Intermedia\Limpieza y carga de int_Products\int_products.Inputs[OLE DB Destination Input].ExternalColumns[capacity]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="capacity" />
-                        <externalMetadataColumn
-                          refId="Package\Intermedia\Limpieza y carga de int_Products\int_products.Inputs[OLE DB Destination Input].ExternalColumns[id_product]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="id_product" />
+                          dataType="numeric"
+                          name="capacity"
+                          precision="18"
+                          scale="2" />
                         <externalMetadataColumn
                           refId="Package\Intermedia\Limpieza y carga de int_Products\int_products.Inputs[OLE DB Destination Input].ExternalColumns[is_can]"
                           dataType="i4"
                           name="is_can" />
+                        <externalMetadataColumn
+                          refId="Package\Intermedia\Limpieza y carga de int_Products\int_products.Inputs[OLE DB Destination Input].ExternalColumns[id_product]"
+                          dataType="i4"
+                          name="id_product" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2041,20 +2040,20 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int"
+                  refId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal"
                   componentClassID="Microsoft.DerivedColumn"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                  name="pasamos capacity a int"
+                  name="pasamos capacity a decimal"
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int.Inputs[Derived Column Input]"
+                      refId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal.Inputs[Derived Column Input]"
                       description="Input to the Derived Column Transformation"
                       name="Derived Column Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int.Inputs[Derived Column Input].Columns[capacity]"
+                          refId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal.Inputs[Derived Column Input].Columns[capacity]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
@@ -2066,55 +2065,131 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int.Outputs[Derived Column Output]"
+                      refId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal.Outputs[Derived Column Output]"
                       description="Default Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       name="Derived Column Output"
-                      synchronousInputId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int.Outputs[Derived Column Output].Columns[capacity_int]"
-                          dataType="i4"
+                          refId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal.Outputs[Derived Column Output].Columns[capacity_decimal]"
+                          dataType="decimal"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int.Outputs[Derived Column Output].Columns[capacity_int]"
-                          name="capacity_int"
+                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal.Outputs[Derived Column Output].Columns[capacity_decimal]"
+                          name="capacity_decimal"
+                          scale="2"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">(DT_I4)#{Package\Intermedia\Limpieza y carga de int_Products\stg_products.Outputs[OLE DB Source Output].Columns[capacity]}</property>
+                              name="Expression">(DT_DECIMAL,2)#{Package\Intermedia\Limpieza y carga de int_Products\stg_products.Outputs[OLE DB Source Output].Columns[capacity]}</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
-                              name="FriendlyExpression">(DT_I4)capacity</property>
+                              name="FriendlyExpression">(DT_DECIMAL,2)capacity</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int.Outputs[Derived Column Error Output]"
+                      refId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal.Outputs[Derived Column Error Output]"
                       description="Error Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Derived Column Error Output"
-                      synchronousInputId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          refId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          refId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Intermedia\Limpieza y carga de int_Products\Quitamos espacios de cm3"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Quitamos espacios de cm3"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Intermedia\Limpieza y carga de int_Products\Quitamos espacios de cm3.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Intermedia\Limpieza y carga de int_Products\Quitamos espacios de cm3.Inputs[Derived Column Input].Columns[measurement]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="measurement"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\creamos measurement.Outputs[Derived Column Output].Columns[measurement]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[REPLACE](#{Package\Intermedia\Limpieza y carga de int_Products\creamos measurement.Outputs[Derived Column Output].Columns[measurement]}," ","")</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">REPLACE(measurement," ","")</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Intermedia\Limpieza y carga de int_Products\Quitamos espacios de cm3.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Intermedia\Limpieza y carga de int_Products\Quitamos espacios de cm3.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Intermedia\Limpieza y carga de int_Products\Quitamos espacios de cm3.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Intermedia\Limpieza y carga de int_Products\Quitamos espacios de cm3.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Intermedia\Limpieza y carga de int_Products\Quitamos espacios de cm3.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\Quitamos espacios de cm3.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Intermedia\Limpieza y carga de int_Products\Quitamos espacios de cm3.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\Quitamos espacios de cm3.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -2150,13 +2225,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">[REPLACE](#{Package\Intermedia\Limpieza y carga de int_Products\creamos measurement.Outputs[Derived Column Output].Columns[measurement]},"Liter","cm3")</property>
+                              name="Expression">[REPLACE](#{Package\Intermedia\Limpieza y carga de int_Products\creamos measurement.Outputs[Derived Column Output].Columns[measurement]},"cm3","Liters")</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
-                              name="FriendlyExpression">REPLACE(measurement,"Liter","cm3")</property>
+                              name="FriendlyExpression">REPLACE(measurement,"cm3","Liters")</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -2198,31 +2273,32 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a cm3"
+                  refId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a Liters"
                   componentClassID="Microsoft.DerivedColumn"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                  name="Se pasa todo a cm3"
+                  name="Se pasa todo a Liters"
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a cm3.Inputs[Derived Column Input]"
+                      refId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a Liters.Inputs[Derived Column Input]"
                       description="Input to the Derived Column Transformation"
                       name="Derived Column Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a cm3.Inputs[Derived Column Input].Columns[measurement]"
+                          refId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a Liters.Inputs[Derived Column Input].Columns[measurement]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="measurement"
                           lineageId="Package\Intermedia\Limpieza y carga de int_Products\creamos measurement.Outputs[Derived Column Output].Columns[measurement]" />
                         <inputColumn
-                          refId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a cm3.Inputs[Derived Column Input].Columns[capacity_int]"
-                          cachedDataType="i4"
-                          cachedName="capacity_int"
+                          refId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a Liters.Inputs[Derived Column Input].Columns[capacity_decimal]"
+                          cachedDataType="decimal"
+                          cachedName="capacity_decimal"
+                          cachedScale="2"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int.Outputs[Derived Column Output].Columns[capacity_int]"
+                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal.Outputs[Derived Column Output].Columns[capacity_decimal]"
                           truncationRowDisposition="FailComponent"
                           usageType="readWrite">
                           <properties>
@@ -2230,13 +2306,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">(#{Package\Intermedia\Limpieza y carga de int_Products\creamos measurement.Outputs[Derived Column Output].Columns[measurement]} == "Liter") ? (#{Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int.Outputs[Derived Column Output].Columns[capacity_int]} * 1000) : #{Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int.Outputs[Derived Column Output].Columns[capacity_int]}</property>
+                              name="Expression">(#{Package\Intermedia\Limpieza y carga de int_Products\creamos measurement.Outputs[Derived Column Output].Columns[measurement]} == "cm3") ? (#{Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal.Outputs[Derived Column Output].Columns[capacity_decimal]} / 1000.00) : #{Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal.Outputs[Derived Column Output].Columns[capacity_decimal]}</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
-                              name="FriendlyExpression">(measurement == "Liter") ? (capacity_int * 1000) : capacity_int</property>
+                              name="FriendlyExpression">(measurement == "cm3") ? (capacity_decimal / 1000.00) : capacity_decimal</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -2245,31 +2321,31 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a cm3.Outputs[Derived Column Output]"
+                      refId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a Liters.Outputs[Derived Column Output]"
                       description="Default Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       name="Derived Column Output"
-                      synchronousInputId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a cm3.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a Liters.Inputs[Derived Column Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a cm3.Outputs[Derived Column Error Output]"
+                      refId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a Liters.Outputs[Derived Column Error Output]"
                       description="Error Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Derived Column Error Output"
-                      synchronousInputId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a cm3.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a Liters.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a cm3.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          refId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a Liters.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a cm3.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a Liters.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a cm3.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          refId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a Liters.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a cm3.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a Liters.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -2446,29 +2522,34 @@
                   startId="Package\Intermedia\Limpieza y carga de int_Products\Limpieza capacity.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output1]"
-                  endId="Package\Intermedia\Limpieza y carga de int_Products\borramos medidas de capacity.Inputs[Derived Column Input]"
-                  name="Derived Column Output"
-                  startId="Package\Intermedia\Limpieza y carga de int_Products\creamos measurement.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output2]"
-                  endId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int.Inputs[Derived Column Input]"
+                  endId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal.Inputs[Derived Column Input]"
                   name="Derived Column Output"
                   startId="Package\Intermedia\Limpieza y carga de int_Products\borramos medidas de capacity.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output3]"
-                  endId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a cm3.Inputs[Derived Column Input]"
+                  refId="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output2]"
+                  endId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a Liters.Inputs[Derived Column Input]"
                   name="Derived Column Output"
-                  startId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int.Outputs[Derived Column Output]" />
+                  startId="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output4]"
+                  refId="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output3]"
                   endId="Package\Intermedia\Limpieza y carga de int_Products\Se actualizan las unidades de medida.Inputs[Derived Column Input]"
                   name="Derived Column Output"
-                  startId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a cm3.Outputs[Derived Column Output]" />
+                  startId="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a Liters.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output5]"
+                  refId="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output4]"
                   endId="Package\Intermedia\Limpieza y carga de int_Products\int_products.Inputs[OLE DB Destination Input]"
                   name="Derived Column Output"
                   startId="Package\Intermedia\Limpieza y carga de int_Products\Se actualizan las unidades de medida.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output5]"
+                  endId="Package\Intermedia\Limpieza y carga de int_Products\Quitamos espacios de cm3.Inputs[Derived Column Input]"
+                  name="Derived Column Output"
+                  startId="Package\Intermedia\Limpieza y carga de int_Products\creamos measurement.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output6]"
+                  endId="Package\Intermedia\Limpieza y carga de int_Products\borramos medidas de capacity.Inputs[Derived Column Input]"
+                  name="Derived Column Output"
+                  startId="Package\Intermedia\Limpieza y carga de int_Products\Quitamos espacios de cm3.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Intermedia\Limpieza y carga de int_Products.Paths[OLE DB Source Output]"
                   endId="Package\Intermedia\Limpieza y carga de int_Products\Limpieza capacity.Inputs[Derived Column Input]"
@@ -3303,159 +3384,6 @@ GENDER IS NULL
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Intermedia\Se crean Dimensiones\dim_products"
-                  componentClassID="Microsoft.OLEDBDestination"
-                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-                  description="OLE DB Destination"
-                  name="dim_products"
-                  usesDispositions="true"
-                  version="4">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dim_products_2024_G18]</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."
-                      name="OpenRowsetVariable"></property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Forces the use of the DefaultCodePage property value when describing character data."
-                      name="AlwaysUseDefaultCodePage">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the mode used to access the database."
-                      name="AccessMode"
-                      typeConverter="AccessMode">3</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                      name="FastLoadKeepIdentity">false</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                      name="FastLoadKeepNulls">false</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                      name="FastLoadMaxInsertCommitSize">2147483647</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Intermedia\Se crean Dimensiones\dim_products.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[localhost.bd_intermedia_2024_G18]"
-                      connectionManagerRefId="Package.ConnectionManagers[localhost.bd_intermedia_2024_G18]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\Intermedia\Se crean Dimensiones\dim_products.Inputs[OLE DB Destination Input]"
-                      errorOrTruncationOperation="Insert"
-                      errorRowDisposition="FailComponent"
-                      hasSideEffects="true"
-                      name="OLE DB Destination Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\dim_products.Inputs[OLE DB Destination Input].Columns[description]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="description"
-                          externalMetadataColumnId="Package\Intermedia\Se crean Dimensiones\dim_products.Inputs[OLE DB Destination Input].ExternalColumns[description]"
-                          lineageId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].Columns[description]" />
-                        <inputColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\dim_products.Inputs[OLE DB Destination Input].Columns[capacity]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="capacity"
-                          externalMetadataColumnId="Package\Intermedia\Se crean Dimensiones\dim_products.Inputs[OLE DB Destination Input].ExternalColumns[capacity]"
-                          lineageId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].Columns[capacity]" />
-                        <inputColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\dim_products.Inputs[OLE DB Destination Input].Columns[measurement]"
-                          cachedDataType="wstr"
-                          cachedLength="50"
-                          cachedName="measurement"
-                          externalMetadataColumnId="Package\Intermedia\Se crean Dimensiones\dim_products.Inputs[OLE DB Destination Input].ExternalColumns[measurement]"
-                          lineageId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].Columns[measurement]" />
-                        <inputColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\dim_products.Inputs[OLE DB Destination Input].Columns[is_can]"
-                          cachedDataType="i4"
-                          cachedName="is_can"
-                          externalMetadataColumnId="Package\Intermedia\Se crean Dimensiones\dim_products.Inputs[OLE DB Destination Input].ExternalColumns[is_can]"
-                          lineageId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].Columns[is_can]" />
-                      </inputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\dim_products.Inputs[OLE DB Destination Input].ExternalColumns[description]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="description" />
-                        <externalMetadataColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\dim_products.Inputs[OLE DB Destination Input].ExternalColumns[capacity]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="capacity" />
-                        <externalMetadataColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\dim_products.Inputs[OLE DB Destination Input].ExternalColumns[measurement]"
-                          dataType="wstr"
-                          length="50"
-                          name="measurement" />
-                        <externalMetadataColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\dim_products.Inputs[OLE DB Destination Input].ExternalColumns[is_can]"
-                          dataType="i4"
-                          name="is_can" />
-                      </externalMetadataColumns>
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Intermedia\Se crean Dimensiones\dim_products.Outputs[OLE DB Destination Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\Intermedia\Se crean Dimensiones\dim_products.Inputs[OLE DB Destination Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\dim_products.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Intermedia\Se crean Dimensiones\dim_products.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\dim_products.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Intermedia\Se crean Dimensiones\dim_products.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\Intermedia\Se crean Dimensiones\dim_regions"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -3607,187 +3535,6 @@ GENDER IS NULL
                           refId="Package\Intermedia\Se crean Dimensiones\dim_regions.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Intermedia\Se crean Dimensiones\dim_regions.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Intermedia\Se crean Dimensiones\products_int"
-                  componentClassID="Microsoft.OLEDBSource"
-                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-                  description="OLE DB Source"
-                  name="products_int"
-                  usesDispositions="true"
-                  version="7">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[int_products_2024_G18]</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."
-                      name="OpenRowsetVariable"></property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                    <property
-                      dataType="System.String"
-                      description="The variable that contains the SQL command to be executed."
-                      name="SqlCommandVariable"></property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Forces the use of the DefaultCodePage property value when describing character data."
-                      name="AlwaysUseDefaultCodePage">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the mode used to access the database."
-                      name="AccessMode"
-                      typeConverter="AccessMode">0</property>
-                    <property
-                      dataType="System.String"
-                      description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping"></property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Intermedia\Se crean Dimensiones\products_int.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[localhost.bd_intermedia_2024_G18]"
-                      connectionManagerRefId="Package.ConnectionManagers[localhost.bd_intermedia_2024_G18]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <outputs>
-                    <output
-                      refId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output]"
-                      name="OLE DB Source Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].Columns[description]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].ExternalColumns[description]"
-                          length="50"
-                          lineageId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].Columns[description]"
-                          name="description"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].Columns[capacity]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].ExternalColumns[capacity]"
-                          length="50"
-                          lineageId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].Columns[capacity]"
-                          name="capacity"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].Columns[measurement]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].ExternalColumns[measurement]"
-                          length="50"
-                          lineageId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].Columns[measurement]"
-                          name="measurement"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].Columns[is_can]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].ExternalColumns[is_can]"
-                          lineageId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].Columns[is_can]"
-                          name="is_can"
-                          truncationRowDisposition="FailComponent" />
-                      </outputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].ExternalColumns[id_product]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="id_product" />
-                        <externalMetadataColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].ExternalColumns[description]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="description" />
-                        <externalMetadataColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].ExternalColumns[capacity]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="capacity" />
-                        <externalMetadataColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].ExternalColumns[measurement]"
-                          dataType="wstr"
-                          length="50"
-                          name="measurement" />
-                        <externalMetadataColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output].ExternalColumns[is_can]"
-                          dataType="i4"
-                          name="is_can" />
-                      </externalMetadataColumns>
-                    </output>
-                    <output
-                      refId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Error Output]"
-                      isErrorOut="true"
-                      name="OLE DB Source Error Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Error Output].Columns[description]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Error Output].Columns[description]"
-                          name="description" />
-                        <outputColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Error Output].Columns[capacity]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Error Output].Columns[capacity]"
-                          name="capacity" />
-                        <outputColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Error Output].Columns[measurement]"
-                          dataType="wstr"
-                          length="50"
-                          lineageId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Error Output].Columns[measurement]"
-                          name="measurement" />
-                        <outputColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Error Output].Columns[is_can]"
-                          dataType="i4"
-                          lineageId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Error Output].Columns[is_can]"
-                          name="is_can" />
-                        <outputColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -3991,11 +3738,6 @@ GENDER IS NULL
                   endId="Package\Intermedia\Se crean Dimensiones\dim_regions.Inputs[OLE DB Destination Input]"
                   name="OLE DB Source Output"
                   startId="Package\Intermedia\Se crean Dimensiones\regions_stg.Outputs[OLE DB Source Output]" />
-                <path
-                  refId="Package\Intermedia\Se crean Dimensiones.Paths[OLE DB Source Output2]"
-                  endId="Package\Intermedia\Se crean Dimensiones\dim_products.Inputs[OLE DB Destination Input]"
-                  name="OLE DB Source Output"
-                  startId="Package\Intermedia\Se crean Dimensiones\products_int.Outputs[OLE DB Source Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -8188,6 +7930,14 @@ WHERE
           Id="Package\Datawarehouse"
           TopLeft="1431.36111111111,342.964285714287" />
         <NodeLayout
+          Size="130,42"
+          Id="Package\Intermedia\Carga fact"
+          TopLeft="189.428571428572,721.714285714286" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Intermedia\Crea dim time"
+          TopLeft="185.777777777778,504.888888888889" />
+        <NodeLayout
           Size="251,42"
           Id="Package\Intermedia\Limpieza y carga de int_Customers"
           TopLeft="148.333333333333,198.833333333333" />
@@ -8202,11 +7952,7 @@ WHERE
         <NodeLayout
           Size="190,42"
           Id="Package\Intermedia\Se crean Dimensiones"
-          TopLeft="182.365079365079,604.039682539681" />
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Intermedia\Crea dim time"
-          TopLeft="185.777777777778,504.888888888889" />
+          TopLeft="181.365079365079,604.039682539681" />
         <NodeLayout
           Size="257,42"
           Id="Package\Intermedia\Truncar tablas en la base intermedia"
@@ -8257,18 +8003,18 @@ WHERE
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Intermedia.PrecedenceConstraints[Restricción 2]"
-          TopLeft="282.055555555555,345.944444444444">
+          TopLeft="282.055555555556,345.944444444444">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.1666666666671"
+              EndConnector="0,59.166666666667"
               Start="0,0"
-              End="0,51.6666666666671">
+              End="0,51.666666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.6666666666671" />
+                    End="0,51.666666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8313,18 +8059,18 @@ WHERE
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Intermedia.PrecedenceConstraints[Restricción 4]"
-          TopLeft="275.571428571429,546.888888888889">
+          TopLeft="275.071428571429,546.888888888889">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57.1507936507924"
+              EndConnector="0,57.150793650792"
               Start="0,0"
-              End="0,49.6507936507924">
+              End="0,49.650793650792">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.6507936507924" />
+                    End="0,49.650793650792" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8333,36 +8079,32 @@ WHERE
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Intermedia\Carga fact"
-          TopLeft="189.428571428572,721.714285714286" />
         <EdgeLayout
           Id="Package\Intermedia.PrecedenceConstraints[Restricción 5]"
-          TopLeft="277.365079365079,646.039682539681">
+          TopLeft="276.365079365079,646.039682539681">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-22.9365079365075,75.6746031746043"
+              EndConnector="-21.936507936507,75.674603174605"
               Start="0,0"
-              End="-22.9365079365075,68.1746031746043">
+              End="-21.936507936507,68.174603174605">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.8373015873021" />
+                    End="0,33.8373015873025" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,33.8373015873021"
-                    Point2="0,37.8373015873021"
-                    Point3="-4,37.8373015873021" />
+                    Point1="0,33.8373015873025"
+                    Point2="0,37.8373015873025"
+                    Point3="-4,37.8373015873025" />
                   <mssgle:LineSegment
-                    End="-18.9365079365075,37.8373015873021" />
+                    End="-17.936507936507,37.8373015873025" />
                   <mssgle:CubicBezierSegment
-                    Point1="-18.9365079365075,37.8373015873021"
-                    Point2="-22.9365079365075,37.8373015873021"
-                    Point3="-22.9365079365075,41.8373015873021" />
+                    Point1="-17.936507936507,37.8373015873025"
+                    Point2="-21.936507936507,37.8373015873025"
+                    Point3="-21.936507936507,41.8373015873025" />
                   <mssgle:LineSegment
-                    End="-22.9365079365075,68.1746031746043" />
+                    End="-21.936507936507,68.174603174605" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8618,7 +8360,7 @@ WHERE
     design-time-name="Package\Intermedia\Limpieza y carga de int_Customers">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="241,44"
           Id="Package\Intermedia\Limpieza y carga de int_Customers\Se truncan las fechas incorrectas"
@@ -8674,7 +8416,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8696,7 +8440,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8718,7 +8464,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8740,7 +8488,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8762,7 +8512,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8784,7 +8536,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8818,7 +8572,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8852,7 +8608,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8901,7 +8659,7 @@ WHERE
     design-time-name="Package\Intermedia\Limpieza y carga de int_Products">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="166,42"
           Id="Package\Intermedia\Limpieza y carga de int_Products\Limpieza capacity"
@@ -8911,43 +8669,43 @@ WHERE
           Id="Package\Intermedia\Limpieza y carga de int_Products\creamos measurement"
           TopLeft="405.833333333333,188.5" />
         <NodeLayout
-          Size="191,42"
-          Id="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a int"
-          TopLeft="402,342.833333333334" />
-        <NodeLayout
           Size="176,42"
-          Id="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a cm3"
-          TopLeft="407.448717948719,422.698717948718" />
+          Id="Package\Intermedia\Limpieza y carga de int_Products\Se pasa todo a Liters"
+          TopLeft="404.448717948719,554.698717948718" />
         <NodeLayout
-          Size="139,42"
-          Id="Package\Intermedia\Limpieza y carga de int_Products\int_products"
-          TopLeft="426.24358974359,574.423076923077" />
-        <NodeLayout
-          Size="229,42"
-          Id="Package\Intermedia\Limpieza y carga de int_Products\borramos medidas de capacity"
-          TopLeft="381.666666666667,270.75" />
+          Size="191,42"
+          Id="Package\Intermedia\Limpieza y carga de int_Products\pasamos capacity a decimal"
+          TopLeft="399,474.833333333334" />
         <NodeLayout
           Size="142,42"
           Id="Package\Intermedia\Limpieza y carga de int_Products\stg_products"
           TopLeft="428,17" />
         <NodeLayout
+          Size="139,42"
+          Id="Package\Intermedia\Limpieza y carga de int_Products\int_products"
+          TopLeft="422.24358974359,706.423076923077" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\Intermedia\Limpieza y carga de int_Products\borramos medidas de capacity"
+          TopLeft="378.666666666667,402.75" />
+        <NodeLayout
           Size="264,42"
           Id="Package\Intermedia\Limpieza y carga de int_Products\Se actualizan las unidades de medida"
-          TopLeft="370.75641025641,497.653846153846" />
+          TopLeft="367.75641025641,629.653846153846" />
         <EdgeLayout
-          Id="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output5]"
-          TopLeft="499.25,539.653846153846">
+          Id="Package\Intermedia\Limpieza y carga de int_Products.Paths[OLE DB Source Output]"
+          TopLeft="498.583333333333,59">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.7692307692311"
+              EndConnector="0,41.166666666667"
               Start="0,0"
-              End="0,27.2692307692311">
+              End="0,33.666666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.2692307692311" />
+                    End="0,33.666666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8958,7 +8716,41 @@ WHERE
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output4]"
-          TopLeft="499.102564102565,464.698717948718">
+          TopLeft="499.75641025641,671.653846153846">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.01282051281999,34.7692307692311"
+              Start="0,0"
+              End="-8.01282051281999,27.2692307692311">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.3846153846155" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.3846153846155"
+                    Point2="0,17.3846153846155"
+                    Point3="-4,17.3846153846155" />
+                  <mssgle:LineSegment
+                    End="-4.01282051281999,17.3846153846155" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.01282051281999,17.3846153846155"
+                    Point2="-8.01282051281999,17.3846153846155"
+                    Point3="-8.01282051281999,21.3846153846155" />
+                  <mssgle:LineSegment
+                    End="-8.01282051281999,27.2692307692311" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output3]"
+          TopLeft="496.102564102565,596.698717948718">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8979,19 +8771,19 @@ WHERE
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output3]"
-          TopLeft="496.47435897436,384.833333333334">
+          Id="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output2]"
+          TopLeft="493.47435897436,516.833333333334">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.865384615384"
+              EndConnector="0,37.8653846153841"
               Start="0,0"
-              End="0,30.365384615384">
+              End="0,30.3653846153841">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.365384615384" />
+                    End="0,30.3653846153841" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9001,8 +8793,8 @@ WHERE
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output2]"
-          TopLeft="496.833333333333,312.75">
+          Id="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output1]"
+          TopLeft="493.833333333333,444.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9014,28 +8806,6 @@ WHERE
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,22.583333333334" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output1]"
-          TopLeft="498.75,230.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.25"
-              Start="0,0"
-              End="0,32.75">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.75" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9066,20 +8836,70 @@ WHERE
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="213,42"
+          Id="Package\Intermedia\Limpieza y carga de int_Products\Quitamos espacios de cm3"
+          TopLeft="421,313" />
         <EdgeLayout
-          Id="Package\Intermedia\Limpieza y carga de int_Products.Paths[OLE DB Source Output]"
-          TopLeft="498.583333333333,59">
+          Id="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output5]"
+          TopLeft="501.333333333333,230.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.166666666667"
+              EndConnector="26.166666666667,82.5"
               Start="0,0"
-              End="0,33.666666666667">
+              End="26.166666666667,75">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.666666666667" />
+                    End="0,37.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.25"
+                    Point2="0,41.25"
+                    Point3="4,41.25" />
+                  <mssgle:LineSegment
+                    End="22.166666666667,41.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.166666666667,41.25"
+                    Point2="26.166666666667,41.25"
+                    Point3="26.166666666667,45.25" />
+                  <mssgle:LineSegment
+                    End="26.166666666667,75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Intermedia\Limpieza y carga de int_Products.Paths[Derived Column Output6]"
+          TopLeft="527.5,355">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-34.333333333333,47.75"
+              Start="0,0"
+              End="-34.333333333333,40.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.875" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.875"
+                    Point2="0,23.875"
+                    Point3="-4,23.875" />
+                  <mssgle:LineSegment
+                    End="-30.333333333333,23.875" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-30.333333333333,23.875"
+                    Point2="-34.333333333333,23.875"
+                    Point3="-34.333333333333,27.875" />
+                  <mssgle:LineSegment
+                    End="-34.333333333333,40.25" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9092,7 +8912,7 @@ WHERE
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Intermedia\Limpieza y carga de int_Products\int_products">
+    design-time-name="Package\Intermedia\Limpieza y carga de int_Products\stg_products">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9105,7 +8925,7 @@ WHERE
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Intermedia\Limpieza y carga de int_Products\stg_products">
+    design-time-name="Package\Intermedia\Limpieza y carga de int_Products\int_products">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9187,19 +9007,11 @@ WHERE
     design-time-name="Package\Intermedia\Se crean Dimensiones">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="145,42"
-          Id="Package\Intermedia\Se crean Dimensiones\dim_products"
-          TopLeft="575,259" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="142,42"
           Id="Package\Intermedia\Se crean Dimensiones\customer_int"
           TopLeft="147,107" />
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Intermedia\Se crean Dimensiones\products_int"
-          TopLeft="575,106" />
         <NodeLayout
           Size="136,42"
           Id="Package\Intermedia\Se crean Dimensiones\regions_stg"
@@ -9212,28 +9024,6 @@ WHERE
           Size="148,42"
           Id="Package\Intermedia\Se crean Dimensiones\dim_customer"
           TopLeft="149,264" />
-        <EdgeLayout
-          Id="Package\Intermedia\Se crean Dimensiones.Paths[OLE DB Source Output2]"
-          TopLeft="646,148">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,111"
-              Start="0,0"
-              End="0,103.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,103.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Intermedia\Se crean Dimensiones.Paths[OLE DB Source Output1]"
           TopLeft="428.75,149">
@@ -9282,33 +9072,7 @@ WHERE
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Intermedia\Se crean Dimensiones\dim_products">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Intermedia\Se crean Dimensiones\customer_int">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Intermedia\Se crean Dimensiones\products_int">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
