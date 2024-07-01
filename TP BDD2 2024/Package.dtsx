@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="263"
-  DTS:VersionGUID="{ECCFB854-76DB-4439-8185-6A20EDBC1B68}">
+  DTS:VersionBuild="284"
+  DTS:VersionGUID="{C31E7338-615A-42FA-A539-8EA4D2F18758}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJoWPOEa1gkWi7l6o+ND6DAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB4f2ICXeRrgOyUEIJF/TD3GjABfxy3ulhyJxG+WmQndwAAAAAOgAAAAAIAACAAAAA6PuCPohbZ29fJslxews4G9BeCzePi5lp7Bbqvv1OWyyAAAADEmw71JXygHcKKd+3vsI1JhqjBkSd5QK1IR+krE1hUnUAAAACtpzpCOm4yh+WhHd+7PnYj/6OF3qvV8+W7kocVVFHipQUfeLjZywFTbMtwGc1w5IYVu6Lb29T5RoyI+ehTlUdv</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJoWPOEa1gkWi7l6o+ND6DAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACRm0HIwAP6zpyjVS0757UMtjMAChKH1hzuDd1YTlbHQgAAAAAOgAAAAAIAACAAAAA5kBfrBeeP9PkGE0vl7y/+EMRj6xUVaE/wIzxX3avlgCAAAACrZkJB+runU05JVc2r8YY1VKaHcg5r7FPIGTldyulQEkAAAADaibr+eooQ/u3q4HbHr+wQ0XD5lPgcy+Ynm8sdkHZY6lFL3m0zsjmpLlJRoC4oIm5DBdFCfcCeRevH/Q1+mpMo</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -350,12 +350,6 @@
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Datawarehouse\Carga dimensiones\DW_Dim_customer.Inputs[OLE DB Destination Input].Columns[CUSTOMER_ID]"
-                          cachedDataType="i4"
-                          cachedName="CUSTOMER_ID"
-                          externalMetadataColumnId="Package\Datawarehouse\Carga dimensiones\DW_Dim_customer.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_ID]"
-                          lineageId="Package\Datawarehouse\Carga dimensiones\int_dim_customer.Outputs[OLE DB Source Output].Columns[CUSTOMER_ID]" />
-                        <inputColumn
                           refId="Package\Datawarehouse\Carga dimensiones\DW_Dim_customer.Inputs[OLE DB Destination Input].Columns[FULL_NAME]"
                           cachedDataType="wstr"
                           cachedLength="255"
@@ -396,6 +390,12 @@
                           cachedName="CUSTOMER_TYPE"
                           externalMetadataColumnId="Package\Datawarehouse\Carga dimensiones\DW_Dim_customer.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_TYPE]"
                           lineageId="Package\Datawarehouse\Carga dimensiones\int_dim_customer.Outputs[OLE DB Source Output].Columns[CUSTOMER_TYPE]" />
+                        <inputColumn
+                          refId="Package\Datawarehouse\Carga dimensiones\DW_Dim_customer.Inputs[OLE DB Destination Input].Columns[CUSTOMER_ID]"
+                          cachedDataType="i4"
+                          cachedName="CUSTOMER_ID"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga dimensiones\DW_Dim_customer.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_ID]"
+                          lineageId="Package\Datawarehouse\Carga dimensiones\int_dim_customer.Outputs[OLE DB Source Output].Columns[CUSTOMER_ID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -403,10 +403,6 @@
                           refId="Package\Datawarehouse\Carga dimensiones\DW_Dim_customer.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_KEY]"
                           dataType="i4"
                           name="CUSTOMER_KEY" />
-                        <externalMetadataColumn
-                          refId="Package\Datawarehouse\Carga dimensiones\DW_Dim_customer.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_ID]"
-                          dataType="i4"
-                          name="CUSTOMER_ID" />
                         <externalMetadataColumn
                           refId="Package\Datawarehouse\Carga dimensiones\DW_Dim_customer.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_TYPE]"
                           dataType="wstr"
@@ -435,6 +431,10 @@
                           refId="Package\Datawarehouse\Carga dimensiones\DW_Dim_customer.Inputs[OLE DB Destination Input].ExternalColumns[ZIPCODE]"
                           dataType="i8"
                           name="ZIPCODE" />
+                        <externalMetadataColumn
+                          refId="Package\Datawarehouse\Carga dimensiones\DW_Dim_customer.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_ID]"
+                          dataType="i4"
+                          name="CUSTOMER_ID" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -536,12 +536,6 @@
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Datawarehouse\Carga dimensiones\DW_Dim_employee.Inputs[OLE DB Destination Input].Columns[EMPLOYEE_ID]"
-                          cachedDataType="i4"
-                          cachedName="EMPLOYEE_ID"
-                          externalMetadataColumnId="Package\Datawarehouse\Carga dimensiones\DW_Dim_employee.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYEE_ID]"
-                          lineageId="Package\Datawarehouse\Carga dimensiones\int_dim_employee.Outputs[OLE DB Source Output].Columns[EMPLOYEE_ID]" />
-                        <inputColumn
                           refId="Package\Datawarehouse\Carga dimensiones\DW_Dim_employee.Inputs[OLE DB Destination Input].Columns[FULL_NAME]"
                           cachedDataType="wstr"
                           cachedLength="255"
@@ -583,6 +577,12 @@
                           cachedName="GENDER"
                           externalMetadataColumnId="Package\Datawarehouse\Carga dimensiones\DW_Dim_employee.Inputs[OLE DB Destination Input].ExternalColumns[GENDER]"
                           lineageId="Package\Datawarehouse\Carga dimensiones\int_dim_employee.Outputs[OLE DB Source Output].Columns[GENDER]" />
+                        <inputColumn
+                          refId="Package\Datawarehouse\Carga dimensiones\DW_Dim_employee.Inputs[OLE DB Destination Input].Columns[EMPLOYEE_ID]"
+                          cachedDataType="i4"
+                          cachedName="EMPLOYEE_ID"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga dimensiones\DW_Dim_employee.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYEE_ID]"
+                          lineageId="Package\Datawarehouse\Carga dimensiones\int_dim_employee.Outputs[OLE DB Source Output].Columns[EMPLOYEE_ID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -590,10 +590,6 @@
                           refId="Package\Datawarehouse\Carga dimensiones\DW_Dim_employee.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYEE_KEY]"
                           dataType="i4"
                           name="EMPLOYEE_KEY" />
-                        <externalMetadataColumn
-                          refId="Package\Datawarehouse\Carga dimensiones\DW_Dim_employee.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYEE_ID]"
-                          dataType="i4"
-                          name="EMPLOYEE_ID" />
                         <externalMetadataColumn
                           refId="Package\Datawarehouse\Carga dimensiones\DW_Dim_employee.Inputs[OLE DB Destination Input].ExternalColumns[FULL_NAME]"
                           dataType="wstr"
@@ -624,6 +620,10 @@
                           dataType="wstr"
                           length="255"
                           name="GENDER" />
+                        <externalMetadataColumn
+                          refId="Package\Datawarehouse\Carga dimensiones\DW_Dim_employee.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYEE_ID]"
+                          dataType="i4"
+                          name="EMPLOYEE_ID" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2388,7 +2388,6 @@
           DTS:refId="Package\Datawarehouse\Carga Fact"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{A5BC30DF-056D-463E-818E-4AC185968ACB}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -2400,11 +2399,284 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Datawarehouse\Carga Fact\int_fact"
+                  refId="Package\Datawarehouse\Carga Fact\DW_FACT"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="DW_FACT"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[DW_Fact_2024_G18]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Datawarehouse\Carga Fact\DW_FACT.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[localhost.datawarehouse_2024_G18]"
+                      connectionManagerRefId="Package.ConnectionManagers[localhost.datawarehouse_2024_G18]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].Columns[TIME_KEY]"
+                          cachedDataType="i4"
+                          cachedName="TIME_KEY"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[TIME_KEY]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[TIME_KEY]" />
+                        <inputColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].Columns[CUSTOMER_KEY]"
+                          cachedDataType="i4"
+                          cachedName="CUSTOMER_KEY"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_KEY]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[CUSTOMER_KEY]" />
+                        <inputColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].Columns[EMPLOYEE_KEY]"
+                          cachedDataType="i4"
+                          cachedName="EMPLOYEE_KEY"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYEE_KEY]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[EMPLOYEE_KEY]" />
+                        <inputColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].Columns[PRODUCT_KEY]"
+                          cachedDataType="i4"
+                          cachedName="PRODUCT_KEY"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_KEY]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[PRODUCT_KEY]" />
+                        <inputColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].Columns[QUANTITY]"
+                          cachedDataType="i4"
+                          cachedName="QUANTITY"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITY]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[QUANTITY]" />
+                        <inputColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].Columns[REGION]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="REGION"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[REGION]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[REGION]" />
+                        <inputColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].Columns[PRICE]"
+                          cachedDataType="numeric"
+                          cachedName="PRICE"
+                          cachedPrecision="10"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[PRICE]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[PRICE]" />
+                        <inputColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].Columns[PERCENTAGE_Apply]"
+                          cachedDataType="numeric"
+                          cachedName="PERCENTAGE_Apply"
+                          cachedPrecision="5"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[PERCENTAGE_Apply]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[PERCENTAGE_Apply]" />
+                        <inputColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].Columns[TOTAL_BILLING_Apply]"
+                          cachedDataType="numeric"
+                          cachedName="TOTAL_BILLING_Apply"
+                          cachedPrecision="10"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[TOTAL_BILLING_Apply]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[TOTAL_BILLING_Apply]" />
+                        <inputColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].Columns[QUANTITY_CAN]"
+                          cachedDataType="i4"
+                          cachedName="QUANTITY_CAN"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITY_CAN]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[QUANTITY_CAN]" />
+                        <inputColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].Columns[TOTAL_LITERS]"
+                          cachedDataType="numeric"
+                          cachedName="TOTAL_LITERS"
+                          cachedPrecision="10"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[TOTAL_LITERS]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[TOTAL_LITERS]" />
+                        <inputColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].Columns[TOTAL_DISCOUNT]"
+                          cachedDataType="numeric"
+                          cachedName="TOTAL_DISCOUNT"
+                          cachedPrecision="10"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[TOTAL_DISCOUNT]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[TOTAL_DISCOUNT]" />
+                        <inputColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].Columns[PRICE_APPLY]"
+                          cachedDataType="numeric"
+                          cachedName="PRICE_APPLY"
+                          cachedPrecision="10"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[PRICE_Apply]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[PRICE_APPLY]" />
+                        <inputColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].Columns[KEY_GROUP]"
+                          cachedDataType="i4"
+                          cachedName="KEY_GROUP"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[GROUP_KEY]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[KEY_GROUP]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[BILL_KEY]"
+                          dataType="i4"
+                          name="BILL_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[TIME_KEY]"
+                          dataType="i4"
+                          name="TIME_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_KEY]"
+                          dataType="i4"
+                          name="CUSTOMER_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYEE_KEY]"
+                          dataType="i4"
+                          name="EMPLOYEE_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_KEY]"
+                          dataType="i4"
+                          name="PRODUCT_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITY]"
+                          dataType="i4"
+                          name="QUANTITY" />
+                        <externalMetadataColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[REGION]"
+                          dataType="wstr"
+                          length="50"
+                          name="REGION" />
+                        <externalMetadataColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[PRICE]"
+                          dataType="numeric"
+                          name="PRICE"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[PERCENTAGE_Apply]"
+                          dataType="numeric"
+                          name="PERCENTAGE_Apply"
+                          precision="5"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[TOTAL_BILLING_Apply]"
+                          dataType="numeric"
+                          name="TOTAL_BILLING_Apply"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[PRICE_Apply]"
+                          dataType="numeric"
+                          name="PRICE_Apply"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITY_CAN]"
+                          dataType="i4"
+                          name="QUANTITY_CAN" />
+                        <externalMetadataColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[TOTAL_LITERS]"
+                          dataType="numeric"
+                          name="TOTAL_LITERS"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[TOTAL_DISCOUNT]"
+                          dataType="numeric"
+                          name="TOTAL_DISCOUNT"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input].ExternalColumns[GROUP_KEY]"
+                          dataType="i4"
+                          name="GROUP_KEY" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Datawarehouse\Carga Fact\DW_FACT.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Datawarehouse\Carga Fact\DW_FACT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Datawarehouse\Carga Fact\DW_FACT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Datawarehouse\Carga Fact\DW_FACT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Datawarehouse\Carga Fact\INT_FACT"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
                   description="OLE DB Source"
-                  name="int_fact"
+                  name="INT_FACT"
                   usesDispositions="true"
                   version="7">
                   <properties>
@@ -2415,7 +2687,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[int_fact_2024_G18]</property>
+                      name="OpenRowset"></property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2424,7 +2696,30 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select
+	dim_time.time_key AS TIME_KEY,
+	dim_cust.CUSTOMER_KEY,
+	dim_emp.EMPLOYEE_KEY,
+	dim_product.product_key AS PRODUCT_KEY,
+	fact.KEY_GROUP,
+	FACT.QUANTITY,
+	FACT.REGION,
+	FACT.PRICE,
+	FACT.PERCENTAGE_Apply,
+                  FACT.PRICE_APPLY,
+	FACT.TOTAL_BILLING_Apply,
+	FACT.CantLatas AS QUANTITY_CAN,
+	FACT.LitrosVendidos AS TOTAL_LITERS,
+	FACT.MontoDescuento AS TOTAL_DISCOUNT
+from [bd_intermedia_2024_G18].[dbo].[int_fact_2024_G18] as fact
+LEFT join [datawarehouse_2024_G18].[dbo].[DW_Dim_time_2024_G18] as dim_time
+	on fact.DATE = dim_time.Fecha
+LEFT join [datawarehouse_2024_G18].[dbo].[DW_Dim_employee_2024_G18] as dim_emp
+    on fact.EMPLOYEE_ID = dim_emp.EMPLOYEE_ID
+LEFT join [datawarehouse_2024_G18].[dbo].[DW_Dim_customer_2024_G18] as dim_cust
+	on fact.CUSTOMER_ID = dim_cust.CUSTOMER_ID
+LEFT join [datawarehouse_2024_G18].[dbo].[DW_Dim_products_2024_G18] as dim_product
+	on fact.PRODUCT_ID = dim_product.id_product</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -2441,7 +2736,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">0</property>
+                      typeConverter="AccessMode">2</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
@@ -2449,7 +2744,7 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Datawarehouse\Carga Fact\int_fact.Connections[OleDbConnection]"
+                      refId="Package\Datawarehouse\Carga Fact\INT_FACT.Connections[OleDbConnection]"
                       connectionManagerID="Package.ConnectionManagers[localhost.bd_intermedia_2024_G18]"
                       connectionManagerRefId="Package.ConnectionManagers[localhost.bd_intermedia_2024_G18]"
                       description="The OLE DB runtime connection used to access the database."
@@ -2457,356 +2752,320 @@
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output]"
+                      refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[BILLING_ID]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[TIME_KEY]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[BILLING_ID]"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[BILLING_ID]"
-                          name="BILLING_ID"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[TIME_KEY]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[TIME_KEY]"
+                          name="TIME_KEY"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[DATE]"
-                          dataType="dbDate"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[DATE]"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[DATE]"
-                          name="DATE"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[CUSTOMER_ID]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[CUSTOMER_KEY]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_ID]"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[CUSTOMER_ID]"
-                          name="CUSTOMER_ID"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_KEY]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[CUSTOMER_KEY]"
+                          name="CUSTOMER_KEY"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[EMPLOYEE_ID]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[EMPLOYEE_KEY]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[EMPLOYEE_ID]"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[EMPLOYEE_ID]"
-                          name="EMPLOYEE_ID"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[EMPLOYEE_KEY]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[EMPLOYEE_KEY]"
+                          name="EMPLOYEE_KEY"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[PRODUCT_ID]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[PRODUCT_KEY]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[PRODUCT_ID]"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[PRODUCT_ID]"
-                          name="PRODUCT_ID"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[PRODUCT_KEY]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[PRODUCT_KEY]"
+                          name="PRODUCT_KEY"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[QUANTITY]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[KEY_GROUP]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[QUANTITY]"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[QUANTITY]"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[KEY_GROUP]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[KEY_GROUP]"
+                          name="KEY_GROUP"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[QUANTITY]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[QUANTITY]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[QUANTITY]"
                           name="QUANTITY"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[REGION]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[REGION]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[REGION]"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[REGION]"
                           length="50"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[REGION]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[REGION]"
                           name="REGION"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[PRODUCT_ID_PRICE]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[PRODUCT_ID_PRICE]"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[PRODUCT_ID_PRICE]"
-                          name="PRODUCT_ID_PRICE"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[PRICE]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[PRICE]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[PRICE]"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[PRICE]"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[PRICE]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[PRICE]"
                           name="PRICE"
                           precision="10"
                           scale="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[PERCENTAGE_Apply]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[PERCENTAGE_Apply]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[PERCENTAGE_Apply]"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[PERCENTAGE_Apply]"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[PERCENTAGE_Apply]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[PERCENTAGE_Apply]"
                           name="PERCENTAGE_Apply"
                           precision="5"
                           scale="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[TOTAL_BILLING_Apply]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[TOTAL_BILLING_Apply]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_BILLING_Apply]"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[TOTAL_BILLING_Apply]"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_BILLING_Apply]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[TOTAL_BILLING_Apply]"
                           name="TOTAL_BILLING_Apply"
                           precision="10"
                           scale="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[PRICE_Apply]"
-                          dataType="numeric"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[PRICE_Apply]"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[PRICE_Apply]"
-                          name="PRICE_Apply"
-                          precision="10"
-                          scale="2"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[CantLatas]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[QUANTITY_CAN]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[CantLatas]"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[CantLatas]"
-                          name="CantLatas"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[QUANTITY_CAN]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[QUANTITY_CAN]"
+                          name="QUANTITY_CAN"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[LitrosVendidos]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[TOTAL_LITERS]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[LitrosVendidos]"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[LitrosVendidos]"
-                          name="LitrosVendidos"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_LITERS]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[TOTAL_LITERS]"
+                          name="TOTAL_LITERS"
                           precision="10"
                           scale="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[MontoDescuento]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[TOTAL_DISCOUNT]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[MontoDescuento]"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[MontoDescuento]"
-                          name="MontoDescuento"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_DISCOUNT]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[TOTAL_DISCOUNT]"
+                          name="TOTAL_DISCOUNT"
                           precision="10"
                           scale="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[KEY_GROUP]"
-                          dataType="i4"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[PRICE_APPLY]"
+                          dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[KEY_GROUP]"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].Columns[KEY_GROUP]"
-                          name="KEY_GROUP"
+                          externalMetadataColumnId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[PRICE_APPLY]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].Columns[PRICE_APPLY]"
+                          name="PRICE_APPLY"
+                          precision="10"
+                          scale="2"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[BILLING_ID]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[TIME_KEY]"
                           dataType="i4"
-                          name="BILLING_ID" />
+                          name="TIME_KEY" />
                         <externalMetadataColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[DATE]"
-                          dataType="dbDate"
-                          name="DATE" />
-                        <externalMetadataColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_ID]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_KEY]"
                           dataType="i4"
-                          name="CUSTOMER_ID" />
+                          name="CUSTOMER_KEY" />
                         <externalMetadataColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[EMPLOYEE_ID]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[EMPLOYEE_KEY]"
                           dataType="i4"
-                          name="EMPLOYEE_ID" />
+                          name="EMPLOYEE_KEY" />
                         <externalMetadataColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[PRODUCT_ID]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[PRODUCT_KEY]"
                           dataType="i4"
-                          name="PRODUCT_ID" />
+                          name="PRODUCT_KEY" />
                         <externalMetadataColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[QUANTITY]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[KEY_GROUP]"
+                          dataType="i4"
+                          name="KEY_GROUP" />
+                        <externalMetadataColumn
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[QUANTITY]"
                           dataType="i4"
                           name="QUANTITY" />
                         <externalMetadataColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[REGION]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[REGION]"
                           dataType="wstr"
                           length="50"
                           name="REGION" />
                         <externalMetadataColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[PRODUCT_ID_PRICE]"
-                          dataType="i4"
-                          name="PRODUCT_ID_PRICE" />
-                        <externalMetadataColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[PRICE]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[PRICE]"
                           dataType="numeric"
                           name="PRICE"
                           precision="10"
                           scale="2" />
                         <externalMetadataColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[PERCENTAGE_Apply]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[PERCENTAGE_Apply]"
                           dataType="numeric"
                           name="PERCENTAGE_Apply"
                           precision="5"
                           scale="2" />
                         <externalMetadataColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_BILLING_Apply]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_BILLING_Apply]"
                           dataType="numeric"
                           name="TOTAL_BILLING_Apply"
                           precision="10"
                           scale="2" />
                         <externalMetadataColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[PRICE_Apply]"
-                          dataType="numeric"
-                          name="PRICE_Apply"
-                          precision="10"
-                          scale="2" />
-                        <externalMetadataColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[CantLatas]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[QUANTITY_CAN]"
                           dataType="i4"
-                          name="CantLatas" />
+                          name="QUANTITY_CAN" />
                         <externalMetadataColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[LitrosVendidos]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_LITERS]"
                           dataType="numeric"
-                          name="LitrosVendidos"
+                          name="TOTAL_LITERS"
                           precision="10"
                           scale="2" />
                         <externalMetadataColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[MontoDescuento]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_DISCOUNT]"
                           dataType="numeric"
-                          name="MontoDescuento"
+                          name="TOTAL_DISCOUNT"
                           precision="10"
                           scale="2" />
                         <externalMetadataColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Output].ExternalColumns[KEY_GROUP]"
-                          dataType="i4"
-                          name="KEY_GROUP" />
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output].ExternalColumns[PRICE_APPLY]"
+                          dataType="numeric"
+                          name="PRICE_APPLY"
+                          precision="10"
+                          scale="2" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output]"
+                      refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output]"
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[BILLING_ID]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[TIME_KEY]"
                           dataType="i4"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[BILLING_ID]"
-                          name="BILLING_ID" />
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[TIME_KEY]"
+                          name="TIME_KEY" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[DATE]"
-                          dataType="dbDate"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[DATE]"
-                          name="DATE" />
-                        <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_ID]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_KEY]"
                           dataType="i4"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_ID]"
-                          name="CUSTOMER_ID" />
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_KEY]"
+                          name="CUSTOMER_KEY" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[EMPLOYEE_ID]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[EMPLOYEE_KEY]"
                           dataType="i4"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[EMPLOYEE_ID]"
-                          name="EMPLOYEE_ID" />
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[EMPLOYEE_KEY]"
+                          name="EMPLOYEE_KEY" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[PRODUCT_ID]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[PRODUCT_KEY]"
                           dataType="i4"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[PRODUCT_ID]"
-                          name="PRODUCT_ID" />
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[PRODUCT_KEY]"
+                          name="PRODUCT_KEY" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[KEY_GROUP]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[KEY_GROUP]"
                           dataType="i4"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[KEY_GROUP]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[KEY_GROUP]"
                           name="KEY_GROUP" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[QUANTITY]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[QUANTITY]"
                           dataType="i4"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[QUANTITY]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[QUANTITY]"
                           name="QUANTITY" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[REGION]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[REGION]"
                           dataType="wstr"
                           length="50"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[REGION]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[REGION]"
                           name="REGION" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[PRODUCT_ID_PRICE]"
-                          dataType="i4"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[PRODUCT_ID_PRICE]"
-                          name="PRODUCT_ID_PRICE" />
-                        <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[PRICE]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[PRICE]"
                           dataType="numeric"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[PRICE]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[PRICE]"
                           name="PRICE"
                           precision="10"
                           scale="2" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[PERCENTAGE_Apply]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[PERCENTAGE_Apply]"
                           dataType="numeric"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[PERCENTAGE_Apply]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[PERCENTAGE_Apply]"
                           name="PERCENTAGE_Apply"
                           precision="5"
                           scale="2" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[TOTAL_BILLING_Apply]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[PRICE_APPLY]"
                           dataType="numeric"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[TOTAL_BILLING_Apply]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[PRICE_APPLY]"
+                          name="PRICE_APPLY"
+                          precision="10"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[TOTAL_BILLING_Apply]"
+                          dataType="numeric"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[TOTAL_BILLING_Apply]"
                           name="TOTAL_BILLING_Apply"
                           precision="10"
                           scale="2" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[PRICE_Apply]"
-                          dataType="numeric"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[PRICE_Apply]"
-                          name="PRICE_Apply"
-                          precision="10"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[CantLatas]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[QUANTITY_CAN]"
                           dataType="i4"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[CantLatas]"
-                          name="CantLatas" />
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[QUANTITY_CAN]"
+                          name="QUANTITY_CAN" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[LitrosVendidos]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[TOTAL_LITERS]"
                           dataType="numeric"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[LitrosVendidos]"
-                          name="LitrosVendidos"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[TOTAL_LITERS]"
+                          name="TOTAL_LITERS"
                           precision="10"
                           scale="2" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[MontoDescuento]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[TOTAL_DISCOUNT]"
                           dataType="numeric"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[MontoDescuento]"
-                          name="MontoDescuento"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[TOTAL_DISCOUNT]"
+                          name="TOTAL_DISCOUNT"
                           precision="10"
                           scale="2" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Datawarehouse\Carga Fact\int_fact.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -2815,7 +3074,48 @@
                   </outputs>
                 </component>
               </components>
+              <paths>
+                <path
+                  refId="Package\Datawarehouse\Carga Fact.Paths[OLE DB Source Output]"
+                  endId="Package\Datawarehouse\Carga Fact\DW_FACT.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Datawarehouse\Carga Fact\INT_FACT.Outputs[OLE DB Source Output]" />
+              </paths>
             </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Datawarehouse\Crear FK"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarea Ejecutar SQL"
+          DTS:DTSID="{014F1523-A3D6-446B-9067-41BFD6E35D4D}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Crear FK"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{02D2D05D-8151-46B1-A5DE-74DCEBFB7FE8}"
+              SQLTask:SqlStatementSource="&#xA;ALTER TABLE [dbo].[DW_Fact_2024_G18]&#xA;ADD CONSTRAINT [FK_DW_Fact_2024_G18_DW_Dim_time_2024_G18] FOREIGN KEY (TIME_KEY)&#xA;REFERENCES DW_Dim_time_2024_G18&#xA;&#xA;ALTER TABLE [dbo].[DW_Fact_2024_G18]&#xA;ADD CONSTRAINT [FK_DW_Fact_2024_G18_DW_Dim_products_2024_G18] FOREIGN KEY (PRODUCT_KEY)&#xA;REFERENCES [dbo].[DW_Dim_products_2024_G18]&#xA;&#xA;ALTER TABLE [dbo].[DW_Fact_2024_G18]&#xA;ADD CONSTRAINT [FK_DW_Fact_2024_G18_DW_Dim_group_2024_G18] FOREIGN KEY (GROUP_KEY)&#xA;REFERENCES [dbo].[DW_Dim_group_2024_G18]&#xA;&#xA;ALTER TABLE [dbo].[DW_Fact_2024_G18]&#xA;ADD CONSTRAINT [FK_DW_Fact_2024_G18_DW_Dim_employee_2024_G18] FOREIGN KEY (EMPLOYEE_KEY)&#xA;REFERENCES [dbo].[DW_Dim_employee_2024_G18]&#xA;&#xA;ALTER TABLE [dbo].[DW_Fact_2024_G18]&#xA;ADD CONSTRAINT [FK_DW_Fact_2024_G18_DW_Dim_customer_2024_G18] FOREIGN KEY (CUSTOMER_KEY)&#xA;REFERENCES [dbo].[DW_Dim_customer_2024_G18]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Datawarehouse\Eliminar FK"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarea Ejecutar SQL"
+          DTS:DTSID="{4A5CE3CC-EB74-4DFB-B6D9-D2CB547B89F7}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Eliminar FK"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{02D2D05D-8151-46B1-A5DE-74DCEBFB7FE8}"
+              SQLTask:SqlStatementSource="ALTER TABLE [dbo].[DW_Fact_2024_G18]&#xA;DROP CONSTRAINT [FK_DW_Fact_2024_G18_DW_Dim_customer_2024_G18];&#xA;&#xA;ALTER TABLE [dbo].[DW_Fact_2024_G18]&#xA;DROP CONSTRAINT [FK_DW_Fact_2024_G18_DW_Dim_employee_2024_G18];&#xA;&#xA;ALTER TABLE [dbo].[DW_Fact_2024_G18]&#xA;DROP CONSTRAINT [FK_DW_Fact_2024_G18_DW_Dim_group_2024_G18];&#xA;&#xA;ALTER TABLE [dbo].[DW_Fact_2024_G18]&#xA;DROP CONSTRAINT [FK_DW_Fact_2024_G18_DW_Dim_products_2024_G18];&#xA;&#xA;ALTER TABLE [dbo].[DW_Fact_2024_G18]&#xA;DROP CONSTRAINT [FK_DW_Fact_2024_G18_DW_Dim_time_2024_G18];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -2832,7 +3132,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{02D2D05D-8151-46B1-A5DE-74DCEBFB7FE8}"
-              SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[DW_Dim_customer_2024_G18];&#xA;&#xA;&#xA;TRUNCATE TABLE [dbo].[DW_Dim_employee_2024_G18]&#xA;&#xA;TRUNCATE TABLE [dbo].[DW_Dim_group_2024_G18]&#xA;&#xA;TRUNCATE TABLE [dbo].[DW_Dim_products_2024_G18]&#xA;&#xA;TRUNCATE TABLE [dbo].[DW_Dim_time_2024_G18]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[DW_Dim_customer_2024_G18];&#xA;TRUNCATE TABLE [dbo].[DW_Dim_employee_2024_G18];&#xA;TRUNCATE TABLE [dbo].[DW_Dim_group_2024_G18];&#xA;TRUNCATE TABLE [dbo].[DW_Dim_products_2024_G18];&#xA;TRUNCATE TABLE [dbo].[DW_Dim_time_2024_G18];&#xA;TRUNCATE TABLE [DW_FACT_2024_G18];&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -2853,6 +3153,22 @@
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción 1"
           DTS:To="Package\Datawarehouse\Carga dimensiones" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Datawarehouse.PrecedenceConstraints[Restricción 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{6E93E709-E627-4400-B73B-0ED903E62E3E}"
+          DTS:From="Package\Datawarehouse\Eliminar FK"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 2"
+          DTS:To="Package\Datawarehouse\Truncar tablas" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Datawarehouse.PrecedenceConstraints[Restricción 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{ADAD211B-9734-4833-90B4-BBCF350EB092}"
+          DTS:From="Package\Datawarehouse\Carga Fact"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 3"
+          DTS:To="Package\Datawarehouse\Crear FK" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -11720,29 +12036,29 @@ WHERE
         <NodeLayout
           Size="174,42"
           Id="Package\Datawarehouse\Carga dimensiones"
-          TopLeft="42.5555555555559,159.333333333333" />
+          TopLeft="62.5555555555559,289.333333333333" />
         <NodeLayout
           Size="133,42"
           Id="Package\Datawarehouse\Carga Fact"
-          TopLeft="56,287" />
+          TopLeft="82.75,406.499999999998" />
         <NodeLayout
           Size="149,42"
           Id="Package\Datawarehouse\Truncar tablas"
-          TopLeft="51,45" />
+          TopLeft="71,175" />
         <EdgeLayout
           Id="Package\Datawarehouse.PrecedenceConstraints[Restricción]"
-          TopLeft="126.027777777778,201.333333333333">
+          TopLeft="149.402777777778,331.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,85.666666666667"
+              EndConnector="0,75.1666666666647"
               Start="0,0"
-              End="0,78.166666666667">
+              End="0,67.6666666666647">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,78.166666666667" />
+                    End="0,67.6666666666647" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11753,7 +12069,7 @@ WHERE
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Datawarehouse.PrecedenceConstraints[Restricción 1]"
-          TopLeft="127.527777777778,87">
+          TopLeft="147.527777777778,217">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -11773,11 +12089,63 @@ WHERE
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Datawarehouse\Eliminar FK"
+          TopLeft="58.5555555555554,60.6666666666667" />
+        <EdgeLayout
+          Id="Package\Datawarehouse.PrecedenceConstraints[Restricción 2]"
+          TopLeft="146.027777777778,102.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72.3333333333333"
+              Start="0,0"
+              End="0,64.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Datawarehouse\Crear FK"
+          TopLeft="86.3333333333333,498.444444444445" />
+        <EdgeLayout
+          Id="Package\Datawarehouse.PrecedenceConstraints[Restricción 3]"
+          TopLeft="148.541666666667,448.499999999998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.9444444444468"
+              Start="0,0"
+              End="0,42.4444444444468">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.4444444444468" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="294,568"
-          Size="294,611"
+          PanelSize="316,593"
+          Size="316,636"
           Id="Package\Datawarehouse"
           TopLeft="1167.47222222222,173.242063492065" />
         <NodeLayout
@@ -12192,9 +12560,9 @@ WHERE
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="109.255050505049,-31.054112554111"
+              EndConnector="109.255050505049,-18.554112554111"
               Start="0,0"
-              End="101.755050505049,-31.054112554111">
+              End="101.755050505049,-18.554112554111">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -12205,13 +12573,13 @@ WHERE
                     Point2="54.6275252525245,0"
                     Point3="54.6275252525245,-4" />
                   <mssgle:LineSegment
-                    End="54.6275252525245,-27.054112554111" />
+                    End="54.6275252525245,-14.554112554111" />
                   <mssgle:CubicBezierSegment
-                    Point1="54.6275252525245,-27.054112554111"
-                    Point2="54.6275252525245,-31.054112554111"
-                    Point3="58.6275252525245,-31.054112554111" />
+                    Point1="54.6275252525245,-14.554112554111"
+                    Point2="54.6275252525245,-18.554112554111"
+                    Point3="58.6275252525245,-18.554112554111" />
                   <mssgle:LineSegment
-                    End="101.755050505049,-31.054112554111" />
+                    End="101.755050505049,-18.554112554111" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12229,133 +12597,45 @@ WHERE
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="149,42"
-          Id="Package\Datawarehouse\Carga dimensiones\int_dim_group"
-          TopLeft="124,103" />
+          Size="150,42"
+          Id="Package\Datawarehouse\Carga dimensiones\DW_Dim_time"
+          TopLeft="935,251" />
         <NodeLayout
           Size="157,42"
           Id="Package\Datawarehouse\Carga dimensiones\DW_Dim_group"
           TopLeft="120,239" />
-        <EdgeLayout
-          Id="Package\Datawarehouse\Carga dimensiones.Paths[OLE DB Source Output]"
-          TopLeft="198.5,145">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,94"
-              Start="0,0"
-              End="0,86.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,86.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="166,42"
-          Id="Package\Datawarehouse\Carga dimensiones\int_dim_customer"
-          TopLeft="294,106" />
-        <NodeLayout
-          Size="174,42"
-          Id="Package\Datawarehouse\Carga dimensiones\DW_Dim_customer"
-          TopLeft="295,242" />
-        <EdgeLayout
-          Id="Package\Datawarehouse\Carga dimensiones.Paths[OLE DB Source Output1]"
-          TopLeft="379.5,148">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,94"
-              Start="0,0"
-              End="0,86.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,86.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Datawarehouse\Carga dimensiones\int_dim_employee"
-          TopLeft="508,119" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Datawarehouse\Carga dimensiones\DW_Dim_employee"
-          TopLeft="506,243" />
-        <EdgeLayout
-          Id="Package\Datawarehouse\Carga dimensiones.Paths[OLE DB Source Output2]"
-          TopLeft="593.25,161">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,82"
-              Start="0,0"
-              End="0,74.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,74.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="149,42"
+          Id="Package\Datawarehouse\Carga dimensiones\int_dim_group"
+          TopLeft="124,103" />
         <NodeLayout
           Size="163,42"
           Id="Package\Datawarehouse\Carga dimensiones\int_dim_products"
           TopLeft="729,109" />
         <NodeLayout
+          Size="168,42"
+          Id="Package\Datawarehouse\Carga dimensiones\int_dim_employee"
+          TopLeft="508,119" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Datawarehouse\Carga dimensiones\int_dim_customer"
+          TopLeft="294,106" />
+        <NodeLayout
           Size="171,42"
           Id="Package\Datawarehouse\Carga dimensiones\DW_Dim_products"
           TopLeft="726,250" />
-        <EdgeLayout
-          Id="Package\Datawarehouse\Carga dimensiones.Paths[OLE DB Source Output3]"
-          TopLeft="811,151">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,99"
-              Start="0,0"
-              End="0,91.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,91.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="141,42"
           Id="Package\Datawarehouse\Carga dimensiones\int_dim_time"
           TopLeft="944,108" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\Datawarehouse\Carga dimensiones\DW_Dim_time"
-          TopLeft="935,251" />
+          Size="174,42"
+          Id="Package\Datawarehouse\Carga dimensiones\DW_Dim_customer"
+          TopLeft="295,242" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Datawarehouse\Carga dimensiones\DW_Dim_employee"
+          TopLeft="506,243" />
         <EdgeLayout
           Id="Package\Datawarehouse\Carga dimensiones.Paths[OLE DB Source Output4]"
           TopLeft="1012.25,150">
@@ -12378,23 +12658,99 @@ WHERE
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Datawarehouse\Carga Fact">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="114,42"
-          Id="Package\Datawarehouse\Carga Fact\int_fact"
-          TopLeft="622,101" />
+        <EdgeLayout
+          Id="Package\Datawarehouse\Carga dimensiones.Paths[OLE DB Source Output3]"
+          TopLeft="811,151">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,99"
+              Start="0,0"
+              End="0,91.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,91.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Datawarehouse\Carga dimensiones.Paths[OLE DB Source Output2]"
+          TopLeft="593.25,161">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,82"
+              Start="0,0"
+              End="0,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Datawarehouse\Carga dimensiones.Paths[OLE DB Source Output1]"
+          TopLeft="379.5,148">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,94"
+              Start="0,0"
+              End="0,86.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,86.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Datawarehouse\Carga dimensiones.Paths[OLE DB Source Output]"
+          TopLeft="198.5,145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,94"
+              Start="0,0"
+              End="0,86.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,86.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Datawarehouse\Carga Fact\int_fact">
+    design-time-name="Package\Datawarehouse\Carga dimensiones\DW_Dim_time">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -12406,6 +12762,161 @@ WHERE
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datawarehouse\Carga dimensiones\DW_Dim_group">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datawarehouse\Carga dimensiones\int_dim_group">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datawarehouse\Carga dimensiones\int_dim_products">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datawarehouse\Carga dimensiones\int_dim_employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datawarehouse\Carga dimensiones\int_dim_customer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datawarehouse\Carga dimensiones\DW_Dim_products">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datawarehouse\Carga dimensiones\int_dim_time">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datawarehouse\Carga dimensiones\DW_Dim_customer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Datawarehouse\Carga dimensiones\DW_Dim_employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Datawarehouse\Carga Fact">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Datawarehouse\Carga Fact\DW_FACT"
+          TopLeft="369,286" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Datawarehouse\Carga Fact\INT_FACT"
+          TopLeft="384,96" />
+        <EdgeLayout
+          Id="Package\Datawarehouse\Carga Fact.Paths[OLE DB Source Output]"
+          TopLeft="460,138">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,148"
+              Start="0,0"
+              End="0,140.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,140.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <TaskHost
     design-time-name="Package\Intermedia\Fact">
     <LayoutInfo>
@@ -12474,7 +12985,7 @@ WHERE
     design-time-name="Package\Intermedia\Limpieza y carga de int_Customers">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="241,44"
           Id="Package\Intermedia\Limpieza y carga de int_Customers\Se truncan las fechas incorrectas"
@@ -12530,7 +13041,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12552,7 +13065,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12574,7 +13089,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12596,7 +13113,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12618,7 +13137,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12640,7 +13161,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12674,7 +13197,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12708,7 +13233,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12757,7 +13284,7 @@ WHERE
     design-time-name="Package\Intermedia\Limpieza y carga de int_Products">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="166,42"
           Id="Package\Intermedia\Limpieza y carga de int_Products\Limpieza capacity"
@@ -12813,7 +13340,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12835,7 +13364,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12857,7 +13388,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12879,7 +13412,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12901,7 +13436,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12923,7 +13460,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12945,7 +13484,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12967,7 +13508,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13003,7 +13546,7 @@ WHERE
     design-time-name="Package\Intermedia\Limpieza y carga de stg_employee">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="138,42"
           Id="Package\Intermedia\Limpieza y carga de stg_employee\stg_eployee"
@@ -13031,7 +13574,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13067,7 +13612,7 @@ WHERE
     design-time-name="Package\Intermedia\Se agrega key a time">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="124,42"
           Id="Package\Intermedia\Se agrega key a time\dim_time"
@@ -13099,7 +13644,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13121,7 +13668,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13157,7 +13706,7 @@ WHERE
     design-time-name="Package\Intermedia\Se crean Dimensiones">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="166,42"
           Id="Package\Intermedia\Se crean Dimensiones\int_dim_customer"
@@ -13185,7 +13734,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13806,7 +14357,7 @@ WHERE
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Datawarehouse\Carga dimensiones\int_dim_group">
+    design-time-name="Package\Datawarehouse\Carga Fact\DW_FACT">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -13819,119 +14370,10 @@ WHERE
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Datawarehouse\Carga dimensiones\DW_Dim_group">
+    design-time-name="Package\Datawarehouse\Carga Fact\INT_FACT">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Datawarehouse\Carga dimensiones\int_dim_customer">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Datawarehouse\Carga dimensiones\DW_Dim_customer">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Datawarehouse\Carga dimensiones\int_dim_employee">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Datawarehouse\Carga dimensiones\DW_Dim_employee">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Datawarehouse\Carga dimensiones\int_dim_products">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Datawarehouse\Carga dimensiones\DW_Dim_products">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Datawarehouse\Carga dimensiones\int_dim_time">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Datawarehouse\Carga dimensiones\DW_Dim_time">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
